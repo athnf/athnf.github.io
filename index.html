@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>JKT48 Music</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .song-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .song-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .song-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .play-button {
+            background-color: #f48fb1;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .play-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Tambahkan gaya CSS untuk tampilan desktop */
+        @media (min-width: 768px) {
+            .playlist-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .song-card {
+                margin-right: 20px;
+            }
+        }
+        .home-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .footer {
+            background-color: #f48fb1;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-pink-300">
+        <div class="container mx-auto flex items-center justify-between py-4 px-8">
+            <div class="flex items-center">
+                <img src="poto/JKT48.png" alt="Logo" class="h-8 mr-2">
+                <h1 class="text-white text-2xl font-bold">Music</h1>
+            </div>
+            <ul class="flex items-center space-x-6">
+                <li><a href="#home" class="text-white hover:text-yellow-500 transition duration-300">Home</a></li>
+                <li><a href="#playlist" class="text-white hover:text-yellow-500 transition duration-300">Playlist</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="home" class="relative h-screen flex items-center justify-center">
+        <img src="poto/bg.png" alt="Background" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-center p-10">
+            <h2 class="text-white text-4xl font-bold mb-0.2 home-text">Selamat datang di website</h2>
+            <h1 class="text-pink-300 text-6xl font-bold mb-2 home-text">JKT48 Music</h1>
+        </div>
+    </div>
+    <div id="playlist" class="container mx-auto py-8">
+        <h2 class="text-3xl font-bold mb-4">Playlist</h2>
+        
+        <!-- Gunakan grid atau flexbox untuk menampilkan daftar playlist secara horizontal -->
+        <div class="playlist-container">
+            <div class="song-card">
+                <img src="poto/hagavi.png" alt="Song 1" class="song-image">
+                <div class="song-title">Heart Gata Virus</div>
+                <button class="play-button" onclick="toggleAudio('audio1')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio1" src="lagu/hagavi.mp3"></audio>
+            </div>
+            <div class="song-card">
+                <img src="poto/jkrt48.png" alt="Song 2" class="song-image">
+                <div class="song-title">Jakarta 48</div>
+                <button class="play-button" onclick="toggleAudio('audio2')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio2" src="lagu/jakarta48.mp3"></audio>
+            </div>
+            <div class="song-card">
+                <img src="poto/kurumi.png" alt="Song 3" class="song-image">
+                <div class="song-title">Kurumi To Dialouge</div>
+                <button class="play-button" onclick="toggleAudio('audio3')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio3" src="lagu/kurumi.mp3"></audio>
+            </div>
+            <div class="song-card">
+                <img src="poto/jiwaru.png" alt="Song 4" class="song-image">
+                <div class="song-title">Jiwaru Days</div>
+                <button class="play-button" onclick="toggleAudio('audio4')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio4" src="lagu/jiwaru.mp3"></audio>
+            </div>
+            <div class="song-card">
+                <img src="poto/kimi.png" alt="Song 5" class="song-image">
+                <div class="song-title">Dirimu Melody</div>
+                <button class="play-button" onclick="toggleAudio('audio5')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio5" src="lagu/kimiwa.mp3"></audio>
+            </div>
+            <div class="song-card">
+                <img src="poto/tp.png" alt="Song 6" class="song-image">
+                <div class="song-title">Hissatsu Teleport</div>
+                <button class="play-button" onclick="toggleAudio('audio6')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio6" src="lagu/tp.mp3"></audio>
+            </div>
+            <div class="song-card">
+                <img src="poto/os.png" alt="Song 7" class="song-image">
+                <div class="song-title">Benang Sari</div>
+                <button class="play-button" onclick="toggleAudio('audio7')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18l18-9L5 3z" />
+                    </svg>
+                </button>
+                <audio id="audio7" src="lagu/os.mp3"></audio>
+            </div>
+            <!-- Tambahkan lebih banyak lagu sesuai kebutuhan -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 JKT48 Music By Najib. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Variabel untuk lagu yang sedang diputar
+        let currentAudio = null;
+
+        // Fungsi untuk memulai atau menghentikan audio
+        function toggleAudio(audioId) {
+            const audio = document.getElementById(audioId);
+
+            // Hentikan lagu yang sedang diputar jika ada
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            if (audio.paused) {
+                // Mulai pemutaran dari awal jika lagu sedang dijeda
+                if (audio.currentTime === 0) {
+                    audio.play();
+                } else {
+                    audio.play(); // Lanjutkan pemutaran jika lagu sedang dijeda
+                }
+                currentAudio = audio;
+            } else {
+                audio.pause();
+                currentAudio = null;
+            }
+        }
+    </script>
+</body>
+</html>
